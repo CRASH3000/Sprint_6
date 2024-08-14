@@ -83,17 +83,17 @@ class OrderPage:
         )
         rent_duration_option.click()
 
-    def select_scooter_color_black(self):
-        scooter_color_black = self.driver.find_element(
-            By.XPATH, OrderPageLocators.SCOOTER_COLOR_BLACK
-        )
-        scooter_color_black.click()
-
-    def select_scooter_color_grey(self):
-        scooter_color_black = self.driver.find_element(
-            By.XPATH, OrderPageLocators.SCOOTER_COLOR_GREY
-        )
-        scooter_color_black.click()
+    def select_scooter_color(self, color):
+        if color == "black":
+            scooter_color_black = self.driver.find_element(
+                By.XPATH, OrderPageLocators.SCOOTER_COLOR_BLACK
+            )
+            scooter_color_black.click()
+        elif color == "grey":
+            scooter_color_grey = self.driver.find_element(
+                By.XPATH, OrderPageLocators.SCOOTER_COLOR_GREY
+            )
+            scooter_color_grey.click()
 
     def click_order_button(self):
         next_button = self.driver.find_element(By.XPATH, OrderPageLocators.ORDER_BUTTON)

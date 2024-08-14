@@ -1,7 +1,7 @@
 class MainPageLocators:
 
     # Локаторы от блока "Вопросы о важном"
-    FAQ_SECTION = "//div[@class='Home_FAQ__3uVm4']"
+    FAQ_SECTION = "//div[contains(@class, 'Home_FAQ')]"
     QUESTION_0 = "//div[@id='accordion__heading-0']"
     ANSWER_0 = "//div[@id='accordion__panel-0']//p"
     QUESTION_1 = "//div[@id='accordion__heading-1']"
@@ -21,5 +21,5 @@ class MainPageLocators:
 
     # Локаторы от кнопок
     ORDER_BUTTON_HEADER = '//button[text()="Заказать"]'
-    ORDER_BUTTON = '//div[@class="Home_FinishButton__1_cWm"]//button[text()="Заказать"]'
+    ORDER_BUTTON = '//div[contains(@class, "Home_FinishButton")]//button[text()="Заказать"]'
     COOKIE_BUTTON = '//*[@id="rcc-confirm-button"]'

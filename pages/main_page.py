@@ -38,19 +38,22 @@ class MainPage:
             EC.element_to_be_clickable((By.XPATH, MainPageLocators.ORDER_BUTTON_HEADER))
         )
         order_button.click()
+        self.wait.until(EC.url_to_be(Urls.ORDER_URL))
+
+    def click_order_button_in_main_page(self):
+        self.close_cookie_message()
+        self.scroll_to_order_button()
+        order_button = self.wait.until(
+            EC.element_to_be_clickable((By.XPATH, MainPageLocators.ORDER_BUTTON))
+        )
+        order_button.click()
+        self.wait.until(EC.url_to_be(Urls.ORDER_URL))
 
     def scroll_to_order_button(self):
         order_button = self.wait.until(
             EC.visibility_of_element_located((By.XPATH, MainPageLocators.ORDER_BUTTON))
         )
         self.driver.execute_script("arguments[0].scrollIntoView(true); window.scrollBy(0, -100);", order_button)
-
-    def click_order_button(self):
-        self.close_cookie_message()
-        order_button = self.wait.until(
-            EC.element_to_be_clickable((By.XPATH, MainPageLocators.ORDER_BUTTON))
-        )
-        order_button.click()
 
     def close_cookie_message(self):
         try:
